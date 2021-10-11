@@ -9,5 +9,6 @@ RUN sed -e '/^tsflags=nodocs/d' -i /etc/yum.conf && \
     yum install -y contrail-config contrail-config-openstack && \
     yum clean all -y && \
     rm -rf /var/cache/yum
+RUN pip install --no-compile "remote-pdb==2.1.0"
 
 CMD ["/usr/bin/tail","-f","/dev/null"]
